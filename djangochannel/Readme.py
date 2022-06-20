@@ -18,7 +18,7 @@ class MyAsyncConsumer(AsyncConsumer):
     
         await self.send({
             "type": "websocket.send", # ----------> આ code દ્વારા server to client message કરી શકાય છે.
-            "text": event["text"], # ----------> Message from Server to Client
+            "text": event["text"], # ----------> Message Body for do message (Server to Client)
         })
 
     async def websocket_disconnect(self,event):
