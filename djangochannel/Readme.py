@@ -14,11 +14,11 @@ class MyAsyncConsumer(AsyncConsumer):
         
 
     async def websocket_receive(self,event):
-        print('Received',event)
+        print('Received',event) # client દ્વારા જે મેસેજ send કરવામાં આવે છે તે અહી event માં receive થશે.
     
         await self.send({
-            "type": "websocket.send", # ----------> Server can send message to client
-            "text": event["text"], # ----------> Server Message to client
+            "type": "websocket.send", # ----------> આ code દ્વારા server to client message કરી શકાય છે.
+            "text": event["text"], # ----------> Message from Server to Client
         })
 
     async def websocket_disconnect(self,event):
