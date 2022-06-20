@@ -6,14 +6,14 @@
 from channels.consumer import AsyncConsumer,StopConsumer
 # ------------ AsyncConsumer -------------------
 class MyAsyncConsumer(AsyncConsumer):
-    async def websocket_connect(self,event):
+    async def websocket_connect(self,event): # called at when client make connection
         print('Connected',event)
         await self.send({ # ----------> Accept connection Server
             "type": "websocket.accept",
         })
         
 
-    async def websocket_receive(self,event):
+    async def websocket_receive(self,event): # called at when data recived form client
         print('Received',event) # client દ્વારા જે મેસેજ send કરવામાં આવે છે તે અહી event માં receive થશે.
     
         await self.send({
@@ -21,7 +21,7 @@ class MyAsyncConsumer(AsyncConsumer):
             "text": event["text"], # ----------> Message Body for do message (Server to Client)
         })
 
-    async def websocket_disconnect(self,event):
+    async def websocket_disconnect(self,event): # called at when client or server terminate connection
         print('Disconnected',event)
         raise StopConsumer() # ----------> Stop Connection safely Between (client-server)
 
