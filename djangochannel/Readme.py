@@ -16,10 +16,10 @@ class MyAsyncConsumer(AsyncConsumer):
     async def websocket_receive(self,event):
         print('Received',event)
     
-        # await self.send({
-        #     "type": "websocket.send", # ----------> Server can send message to client
-        #     "text": event["text"], # ----------> Server Message to client
-        # })
+        await self.send({
+            "type": "websocket.send", # ----------> Server can send message to client
+            "text": event["text"], # ----------> Server Message to client
+        })
 
     async def websocket_disconnect(self,event):
         print('Disconnected',event)
