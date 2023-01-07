@@ -11,6 +11,9 @@
 ]
 
 # 3- ASGI_APPLICATION = 'djangochannel.asgi.application' (setting.py)
+# 4- asgi.py  
+
+
 # 4- Make consumer.py file in app 
 # ---------- consumer.py ---------------
 from channels.consumer import AsyncConsumer,StopConsumer
