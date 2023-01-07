@@ -1,5 +1,5 @@
 # 1- Install channels (pip install channel)
-# 2- Registerd in django installed_app
+# 2- Registerd in django installed_app (setting.py)
 # 3- ASGI_APPLICATION = 'djangochannel.asgi.application' (setting.py)
 # 4- Make consumer.py file in app 
 # ---------- consumer.py ---------------
